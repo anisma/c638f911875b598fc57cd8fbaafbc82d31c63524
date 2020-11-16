@@ -24,7 +24,7 @@ export const Text = styled.span`
    color: #424749;
    font-weight: 600;
    display: flex;
-   align-item: center;
+   align-items: center;
 `;
 
 export const SubText = styled.span`
