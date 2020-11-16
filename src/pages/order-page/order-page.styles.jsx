@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const OrderPageWrapper = styled.div``;
+export const OrderPageWrapper = styled.div`
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+`;
 
 export const ButtonWrapper = styled.div`
    display: flex;
@@ -9,9 +13,14 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-   padding: 0 16px;
+   padding: 16px 16px;
    display: flex;
    flex-wrap: wrap;
    background: #f1f1f2;
    height: 100px;
+   gap: 12px;
+`;
+
+export const DateWrapper = styled.span`
+   font-weight: 700;
 `;

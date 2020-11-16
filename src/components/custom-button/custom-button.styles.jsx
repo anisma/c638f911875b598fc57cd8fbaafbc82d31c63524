@@ -12,11 +12,24 @@ const headerButtonActiveStyles = css`
    color: #fff;
 `;
 
+const addButtonStyles = css`
+   background: #f9423a;
+   font-weight: 600;
+   font-size: 1em;
+   color: #fff;
+   text-transform: uppercase;
+   padding: 8px 24px;
+`;
+
 const getCustomButtonStyles = (props) => {
    if (props.headerButton && props.active) {
       return headerButtonActiveStyles;
    } else if (props.headerButton) {
       return headerButtonStyles;
+   }
+
+   if (props.addButton) {
+      return addButtonStyles;
    }
 };
 
