@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const HeaderContainer = styled.div`
+   padding: 0 16px;
+   border-bottom: 1px solid #f1f1f2;
+`;
+
 export const HeaderWrapper = styled.header`
    /* height: 40px; */
    width: 100%;
