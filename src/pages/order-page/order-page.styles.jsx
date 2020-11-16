@@ -4,7 +4,7 @@ export const OrderPageWrapper = styled.div`
    margin-top: 109px;
    display: flex;
    flex-direction: column;
-   gap: 12px;
+   gap: 16px;
 `;
 
 export const ButtonWrapper = styled.div`
@@ -19,7 +19,7 @@ export const ContentWrapper = styled.div`
    flex-wrap: wrap;
    background: #f1f1f2;
    height: 100px;
-   gap: 12px;
+   gap: 16px;
 `;
 
 export const DateWrapper = styled.span`

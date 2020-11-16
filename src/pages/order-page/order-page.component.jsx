@@ -1,4 +1,5 @@
 import React from 'react';
+import AddToCart from '../../components/add-to-cart/add-to-cart.component';
 import Card from '../../components/card/card.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
 import {
@@ -24,6 +25,7 @@ const OrderPage = () => {
             <Card />
             <Card />
          </ContentWrapper>
+         <AddToCart />
       </OrderPageWrapper>
    );
 };
