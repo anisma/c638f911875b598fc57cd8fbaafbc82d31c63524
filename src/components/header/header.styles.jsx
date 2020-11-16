@@ -3,14 +3,15 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.div`
    padding: 0 16px;
    border-bottom: 1px solid #f1f1f2;
+   position: fixed;
+   background: #fff;
+   top: 0;
 `;
 
 export const HeaderWrapper = styled.header`
-   /* height: 40px; */
    width: 100%;
    display: flex;
    align-items: center;
-   /* padding: 8px 0; */
 `;
 
 export const LocationWrapper = styled.div`

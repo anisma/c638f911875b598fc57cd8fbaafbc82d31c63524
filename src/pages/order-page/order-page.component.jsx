@@ -20,6 +20,9 @@ const OrderPage = () => {
          <ContentWrapper>
             <DateWrapper>Kamis, 14 November 2020</DateWrapper>
             <Card />
+            <Card />
+            <Card />
+            <Card />
          </ContentWrapper>
       </OrderPageWrapper>
    );
