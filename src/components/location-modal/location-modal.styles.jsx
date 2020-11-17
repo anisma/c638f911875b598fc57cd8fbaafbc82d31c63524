@@ -9,7 +9,7 @@ export const LocationModalcontainer = styled.div`
 
 export const LocationModalWrapper = styled.div`
    height: 100%;
-   width: 100%;
+   width: 100vw;
    background: #fff;
    border-radius: 8px 8px 0 0;
    padding: 16px;

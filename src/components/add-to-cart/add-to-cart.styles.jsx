@@ -20,7 +20,7 @@ export const AddToCartWrapper = styled.div`
       content: '';
       position: absolute;
       height: 100%;
-      width: 100%;
+      width: 100vw;
       bottom: -16px;
       left: 0;
       z-index: -9;

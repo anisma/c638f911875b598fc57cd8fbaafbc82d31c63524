@@ -36,6 +36,7 @@ export const SubText = styled.span`
 `;
 
 export const ButtonWrapper = styled.div`
+   width: 100vw;
    border-top: 1px solid #f1f1f2;
    display: flex;
    padding: 8px 16px;
