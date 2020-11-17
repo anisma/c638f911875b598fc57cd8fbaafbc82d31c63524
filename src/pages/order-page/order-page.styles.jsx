@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 
 export const OrderPageWrapper = styled.div`
-   margin-top: 169px;
+   width: 100%;
+   height: 100%;
+   padding-top: 169px;
    display: flex;
    flex-wrap: wrap;
    gap: 16px;
-   margin-bottom: 16px;
-   background: #f1f1f2;
+   background: #f7f7f8;
 `;
 
 export const ContentWrapper = styled.div`
    padding: 0 16px;
-   padding-bottom: 32px;
    display: flex;
    flex-wrap: wrap;
-   height: 100px;
    gap: 16px;
+   padding-bottom: 40px;
 `;
 
 export const DateWrapper = styled.span`

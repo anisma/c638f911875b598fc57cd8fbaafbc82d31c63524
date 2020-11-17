@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const DatePickerContainer = styled.div`
    overflow: hidden;
-   width: 100%;
+   width: calc(100vw - 32px);
+   margin: 0 16px;
 `;
 export const DatePickerWrapper = styled.div`
    display: flex;
