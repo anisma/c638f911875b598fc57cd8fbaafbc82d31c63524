@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
@@ -12,8 +14,15 @@ import {
 } from './header.styles';
 import DatePicker from '../date-picker/date-picker.component';
 import CustomButton from '../custom-button/custom-button.component';
+import { _changeMealTime } from '../../redux/app/app-action';
 
 const Header = () => {
+   //useSelector
+   const mealTime = useSelector((state) => state.app.mealTime);
+
+   //useDispatch
+   const dispatch = useDispatch();
+   const changeMealTime = (input) => dispatch(_changeMealTime(input));
    return (
       <HeaderContainer>
          <HeaderWrapper>
@@ -28,10 +37,20 @@ const Header = () => {
          </HeaderWrapper>
          <DatePicker />
          <ButtonWrapper>
-            <CustomButton headerButton active>
+            <CustomButton
+               headerButton
+               active={mealTime === 'lunch' ? true : false}
+               onClick={() => changeMealTime('lunch')}
+            >
                Lunch
             </CustomButton>
-            <CustomButton headerButton>Dinner</CustomButton>
+            <CustomButton
+               headerButton
+               active={mealTime === 'dinner' ? true : false}
+               onClick={() => changeMealTime('dinner')}
+            >
+               Dinner
+            </CustomButton>
          </ButtonWrapper>
       </HeaderContainer>
    );
