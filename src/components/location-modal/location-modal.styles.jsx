@@ -13,6 +13,9 @@ export const LocationModalWrapper = styled.div`
    background: #fff;
    border-radius: 8px 8px 0 0;
    padding: 16px;
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
 
    &::before {
       content: '';

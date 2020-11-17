@@ -7,6 +7,8 @@ import {
    LocationModalWrapper,
    Title,
 } from './location-modal.styles';
+import LocationInput from '../location-input/loaction-input.component';
+import LocationPreview from '../location-preview/location-preview.component';
 
 const LocationModal = () => {
    return (
@@ -16,6 +18,8 @@ const LocationModal = () => {
                <CloseRounded />
             </CloseButtonWrapper>
             <Title>Cek makanan yang tersedia di lokasi kamu!</Title>
+            <LocationInput />
+            <LocationPreview />
          </LocationModalWrapper>
       </LocationModalcontainer>
    );
