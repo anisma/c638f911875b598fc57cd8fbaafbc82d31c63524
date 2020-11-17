@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import dateReducer from './date/date-reducer' 
+import appReducer from './app/app-reducer' 
 
 const persistConfig = {
    key: 'root',
    storage,
 };
 
-const rootReducer = combineReducers({ date: dateReducer
+const rootReducer = combineReducers({ app: appReducer
    
 });
 

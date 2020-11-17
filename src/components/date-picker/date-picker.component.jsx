@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import Date from '../date/date.component';
 import { DatePickerWrapper } from './date-picker.styles';
 import { getNext2Weeks, getShortDateString } from '../../utils/date.utils';
-import { _changeDate } from '../../redux/date/date-action';
+import { _changeDate } from '../../redux/app/app-action';
 
 const DatePicker = () => {
    //useSelector
-   const selectedDate = useSelector((state) => state.date.selectedDate);
+   const selectedDate = useSelector((state) => state.app.selectedDate);
 
    //useDispatch
    const dispatch = useDispatch();
@@ -23,34 +23,31 @@ const DatePicker = () => {
       setSelectedDateString(dateStr);
    }, [selectedDate]);
 
-   return (
-      <DatePickerWrapper>
-         {twoWeeksDate.map((d, i) => {
-            const fullDateString = d.fullDate.toDateString();
-            const date = d.fullDate.toString();
-            const hidden = d.day === 'MIN' || d.day === 'SAB' ? true : false;
+   //dateElements
+   const dateElements = twoWeeksDate.map((d, i) => {
+      const fullDateString = d.fullDate.toDateString();
+      const date = d.fullDate.toString();
+      const hidden = d.day === 'MIN' || d.day === 'SAB' ? true : false;
 
-            return (
-               <Date
-                  key={i}
-                  day={d.day}
-                  date={d.date}
-                  hidden={hidden}
-                  active={
-                     !hidden && fullDateString === selectedDateString
-                        ? true
-                        : false
-                  }
-                  onClick={() => {
-                     if (!hidden) {
-                        selectDate(date);
-                     }
-                  }}
-               />
-            );
-         })}
-      </DatePickerWrapper>
-   );
+      return (
+         <Date
+            key={i}
+            day={d.day}
+            date={d.date}
+            hidden={hidden}
+            active={
+               !hidden && fullDateString === selectedDateString ? true : false
+            }
+            onClick={() => {
+               if (!hidden) {
+                  selectDate(date);
+               }
+            }}
+         />
+      );
+   });
+
+   return <DatePickerWrapper>{dateElements}</DatePickerWrapper>;
 };
 
 export default DatePicker;

@@ -1,13 +1,13 @@
-import DateActionTypes from './date.types'
-const date =new Date
+import AppActionTypes from './app-types'
+const date = new Date
 
 const INITIAL_DATA = {
    selectedDate: date.toString(),
 };
 
-const shopReducer = (state = INITIAL_DATA, action) => {
+const appReducer = (state = INITIAL_DATA, action) => {
    switch (action.type) {
-      case DateActionTypes.SELECT_DATE:
+      case AppActionTypes.SELECT_DATE:
          return {
             ...state,
             selectedDate: action.payload.toString()
@@ -19,4 +19,4 @@ const shopReducer = (state = INITIAL_DATA, action) => {
    }
 };
 
-export default shopReducer;
+export default appReducer;
