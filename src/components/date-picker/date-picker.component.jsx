@@ -59,7 +59,6 @@ const DatePicker = () => {
          window.removeEventListener('touchmove', touchMoveHandle);
       };
    }, [swipe]);
-   console.log(pos);
    //custom handle
    const touchStartHandle = (e) => {
       setSwipe(true);
