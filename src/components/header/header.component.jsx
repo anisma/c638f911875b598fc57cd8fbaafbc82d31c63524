@@ -58,7 +58,7 @@ const Header = () => {
                <SubText>alamat pengantar</SubText>
                <Text onClick={toggleHiddenLocationModal}>
                   {selectedLocation
-                     ? selectedLocation
+                     ? selectedLocation.name
                      : 'Pilih alamat pengantar'}
                   <ExpandMore fontSize='small' style={{ color: '#f9423a' }} />
                </Text>

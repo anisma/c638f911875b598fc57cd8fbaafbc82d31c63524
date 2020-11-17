@@ -18,8 +18,8 @@ const LocationModal = () => {
 
    //useDispatch
    const dispatch = useDispatch();
-   const toggleHiddenLocationModal = (input) =>
-      dispatch(_toggleHiddenLocationModal);
+   const toggleHiddenLocationModal = () => dispatch(_toggleHiddenLocationModal);
+
    return (
       <LocationModalcontainer>
          <LocationModalWrapper>

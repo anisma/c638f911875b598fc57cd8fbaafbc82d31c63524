@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import LocationIcon from '@material-ui/icons/LocationOnRounded';
 import {
    Address,
@@ -7,11 +8,25 @@ import {
    TextWrapper,
    Title,
 } from './location-preview.styles';
+import {
+   _selectLocation,
+   _toggleHiddenLocationModal,
+} from '../../redux/app/app-action';
 
 const LocationPreview = ({ location }) => {
    const { name, address } = location;
+
+   //useDispatch
+   const dispatch = useDispatch();
+   const selectLocation = (input) => dispatch(_selectLocation(input));
+   const toggleHiddenLocationModal = () => dispatch(_toggleHiddenLocationModal);
    return (
-      <LocationPreviewWrapper>
+      <LocationPreviewWrapper
+         onClick={() => {
+            selectLocation(location);
+            toggleHiddenLocationModal();
+         }}
+      >
          <IconWrapper>
             <LocationIcon fontSize='small' />
          </IconWrapper>
