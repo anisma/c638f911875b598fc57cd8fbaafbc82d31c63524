@@ -6,7 +6,7 @@ export const MEAL_DATA = [
       resto: 'up town',
       price: 25000,
       image: 'https://images.unsplash.com/photo-1578552606388-a0f1d618a9dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      category: ['lunch', 'dinner']
+      category: ['lunch',]
    },
     {
       id: 2,

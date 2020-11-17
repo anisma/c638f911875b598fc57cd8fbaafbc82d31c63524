@@ -13,11 +13,13 @@ import {
 const OrderPage = () => {
    //useSelector
    const meals = useSelector((state) => state.app.meals);
+   const mealTime = useSelector((state) => state.app.mealTime);
+   const todaysDate = getTodaysDate();
 
    return (
       <OrderPageWrapper>
          <ContentWrapper>
-            <DateWrapper>{getTodaysDate}</DateWrapper>
+            <DateWrapper>{todaysDate}</DateWrapper>
             {meals.map((meal) => (
                <Card key={meal.id} meal={meal} />
             ))}

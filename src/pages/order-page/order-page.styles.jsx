@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const OrderPageWrapper = styled.div`
-   margin-top: 109px;
+   margin-top: 169px;
    display: flex;
    flex-direction: column;
    gap: 16px;

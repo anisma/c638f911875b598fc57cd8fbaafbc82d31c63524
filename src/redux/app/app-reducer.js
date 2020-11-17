@@ -2,11 +2,14 @@ import AppActionTypes from './app-types'
 import {MEAL_DATA} from './MEAL_DATA'
 const date = new Date
 
+const test = MEAL_DATA.filter((meal)=> meal.category.includes('lunch'))
+console.log(test)
+
 const INITIAL_DATA = {
    selectedDate: date.toString(),
    datePickerPosition: 0,
    mealTime: 'lunch',
-   meals: MEAL_DATA
+   meals: MEAL_DATA.filter((meal)=> meal.category.includes('lunch'))
 };
 
 const appReducer = (state = INITIAL_DATA, action) => {
@@ -25,7 +28,8 @@ const appReducer = (state = INITIAL_DATA, action) => {
       case AppActionTypes.CHANGE_MEAL_TIME:
          return {
             ...state,
-            mealTime: action.payload
+            mealTime: action.payload,
+            meals: MEAL_DATA.filter((meal)=> meal.category.includes(action.payload))
          }
      
       default:
