@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LocationIcon from '@material-ui/icons/LocationOnRounded';
 import {
    IconWrapper,
@@ -6,10 +6,10 @@ import {
    SearchInput,
 } from './location-input.styles';
 
-const LocationInput = () => {
+const LocationInput = ({ value }) => {
    return (
       <LocationInputWrapper>
-         <SearchInput />
+         <SearchInput placeholder='please type kulina to see test data' />
          <IconWrapper>
             <LocationIcon fontSize='small' />
          </IconWrapper>

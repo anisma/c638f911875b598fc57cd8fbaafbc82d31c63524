@@ -1,9 +1,8 @@
 import AppActionTypes from './app-types'
-import {MEAL_DATA} from './MEAL_DATA'
+import { MEAL_DATA } from './MEAL_DATA'
+import {LOCATION_DATA} from './LOCATION_DATA'
 const date = new Date
 
-const test = MEAL_DATA.filter((meal)=> meal.category.includes('lunch'))
-console.log(test)
 
 const INITIAL_DATA = {
    selectedDate: date.toString(),
@@ -14,6 +13,8 @@ const INITIAL_DATA = {
    totalPrice: 0,
    totalCartItem: 0,
    hiddenLocationModal: true,
+   locations:LOCATION_DATA,
+   selectedLocation: null
 };
 
 const appReducer = (state = INITIAL_DATA, action) => {
@@ -58,6 +59,12 @@ const appReducer = (state = INITIAL_DATA, action) => {
             ...state,
             hiddenLocationModal: !state.hiddenLocationModal
          }
+
+      case AppActionTypes.SELECT_LOCATION :
+         return {
+            ...state,
+            selectedLocation: action.payload,
+         }
      
       default:
          return state;
@@ -65,6 +72,9 @@ const appReducer = (state = INITIAL_DATA, action) => {
 };
 
 export default appReducer;
+
+
+///utils
 
 export const addItemToCart = (cartItems, cartItemToAdd) => {
    const existingCartItem = cartItems.find(

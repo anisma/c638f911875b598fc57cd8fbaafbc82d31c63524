@@ -23,6 +23,7 @@ import {
 const Header = () => {
    //useSelector
    const mealTime = useSelector((state) => state.app.mealTime);
+   const selectedLocation = useSelector((state) => state.app.selectedLocation);
 
    //useDispatch
    const dispatch = useDispatch();
@@ -56,7 +57,9 @@ const Header = () => {
             <LocationWrapper>
                <SubText>alamat pengantar</SubText>
                <Text onClick={toggleHiddenLocationModal}>
-                  Tokopedia tower
+                  {selectedLocation
+                     ? selectedLocation
+                     : 'Pilih alamat pengantar'}
                   <ExpandMore fontSize='small' style={{ color: '#f9423a' }} />
                </Text>
             </LocationWrapper>
