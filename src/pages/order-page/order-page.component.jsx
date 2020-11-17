@@ -30,8 +30,8 @@ const OrderPage = () => {
 
    return (
       <OrderPageWrapper>
+         <DateWrapper>{todaysDate}</DateWrapper>
          <ContentWrapper>
-            <DateWrapper>{todaysDate}</DateWrapper>
             {meals.map((meal) => (
                <Card key={meal.id} meal={meal} />
             ))}

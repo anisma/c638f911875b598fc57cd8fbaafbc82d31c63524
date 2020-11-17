@@ -1,7 +1,7 @@
 import AppActionTypes from './app-types'
 import { MEAL_DATA } from './MEAL_DATA'
 import {LOCATION_DATA} from './LOCATION_DATA'
-const date = new Date
+const date = new Date()
 
 
 const INITIAL_DATA = {

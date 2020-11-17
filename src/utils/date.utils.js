@@ -24,6 +24,28 @@ export const getDay = (date) => {
    }
 }
 
+export const getFullDay = (date) => {
+   const day = date.getDay();
+   switch (day) {
+      case 0:
+         return "Minggu"
+      case 1:
+         return "Senin"
+      case 2:
+         return "Selasa"
+      case 3:
+         return "Rabu"
+      case 4:
+         return "Kamis"
+      case 5:
+         return "Jumat"
+      case 6:
+         return "Sabtu"
+      default:
+         break;
+   }
+}
+
 export const getMonth = (date) => {
    const month = date.getMonth();
    switch (month) {
@@ -59,7 +81,7 @@ export const getMonth = (date) => {
 export const getTodaysDate = () => {
    const date = new Date();
    const _date = date.getDate();
-   const _day = getDay(date);
+   const _day = getFullDay(date);
    const _month = getMonth(date);
    const _year = date.getFullYear();
 

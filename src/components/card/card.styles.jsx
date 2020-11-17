@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const CardWrapper = styled.div`
-   width: 100%;
+   width: 300px;
+   flex-grow: 1;
    background: #fff;
    border-radius: 8px;
    box-shadow: 0px 8px 10px 0px rgba(10, 31, 68, 0.1);
@@ -20,7 +21,6 @@ export const CardBody = styled.div`
 `;
 
 export const Title = styled.h2`
-   /* font-size: 1em; */
    font-weight: 600;
    text-transform: capitalize;
    line-height: 1.5;

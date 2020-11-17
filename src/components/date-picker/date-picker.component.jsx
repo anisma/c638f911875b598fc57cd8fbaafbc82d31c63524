@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Date from '../date/date.component';
 import { DatePickerWrapper, DatePickerContainer } from './date-picker.styles';
 import { getNext2Weeks, getShortDateString } from '../../utils/date.utils';
-import { _changeDate, _swipeDatePicker } from '../../redux/app/app-action';
+import { _changeDate } from '../../redux/app/app-action';
 
 const DatePicker = () => {
    /*************** SelectedDate Manipulation******************/

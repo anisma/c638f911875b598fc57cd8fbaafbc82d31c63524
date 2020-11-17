@@ -12,6 +12,13 @@ const headerButtonActiveStyles = css`
    color: #fff;
 `;
 
+const leftStyle = css`
+   border-radius: 8px 0 0 8px;
+`;
+const rightStyle = css`
+   border-radius: 0 8px 8px 0;
+`;
+
 const addButtonStyles = css`
    background: #f9423a;
    font-weight: 600;
@@ -22,10 +29,16 @@ const addButtonStyles = css`
 `;
 
 const getCustomButtonStyles = (props) => {
+   let style = null;
+   if (props.left) {
+      style = leftStyle;
+   } else if (props.right) {
+      style = rightStyle;
+   }
    if (props.headerButton && props.active) {
-      return headerButtonActiveStyles;
+      return style + headerButtonActiveStyles;
    } else if (props.headerButton) {
-      return headerButtonStyles;
+      return style + headerButtonStyles;
    }
 
    if (props.addButton) {

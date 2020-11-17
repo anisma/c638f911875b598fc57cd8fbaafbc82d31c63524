@@ -68,6 +68,7 @@ const Header = () => {
          {!hideButton && (
             <ButtonWrapper>
                <CustomButton
+                  left
                   headerButton
                   active={mealTime === 'lunch' ? true : false}
                   onMouseDown={() => {
@@ -78,6 +79,7 @@ const Header = () => {
                   Lunch
                </CustomButton>
                <CustomButton
+                  right
                   headerButton
                   active={mealTime === 'dinner' ? true : false}
                   onMouseDown={() => {

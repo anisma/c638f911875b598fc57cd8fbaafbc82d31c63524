@@ -14,7 +14,7 @@ import {
 } from './card.styles';
 
 const Card = ({ meal }) => {
-   const { rating, price, name, resto, image, id } = meal;
+   const { rating, price, name, resto, image } = meal;
 
    //useDispatch
    const dispatch = useDispatch();

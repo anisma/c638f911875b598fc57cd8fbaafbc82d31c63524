@@ -11,12 +11,24 @@ const ProductRating = ({ rate }) => {
    let counter = 5;
    while (counter > 0) {
       if (rating >= 1) {
-         stars.push(<Star fontSize='small' style={{ color: '#f9423a' }} />);
+         stars.push(
+            <Star key={counter} fontSize='small' style={{ color: '#f9423a' }} />
+         );
       } else if (rating < 1 && rating > 0) {
-         stars.push(<StarHalf fontSize='small' style={{ color: '#f9423a' }} />);
+         stars.push(
+            <StarHalf
+               key={counter}
+               fontSize='small'
+               style={{ color: '#f9423a' }}
+            />
+         );
       } else {
          stars.push(
-            <StarBorder fontSize='small' style={{ color: '#f9423a' }} />
+            <StarBorder
+               key={counter}
+               fontSize='small'
+               style={{ color: '#f9423a' }}
+            />
          );
       }
       rating--;

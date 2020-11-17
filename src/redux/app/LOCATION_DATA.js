@@ -1,6 +1,6 @@
 export const LOCATION_DATA = [
    {
-      name: 'kulina headquarters',
+      name: 'Kulina Headquarters',
       address: 'Gedung Kulina Lt. 3, Jalan Tulodong Atas No. 28, Senayan, Kebayoran Baru, Jakarta Selatan, DKI Jakarta 12190, Indonesia'
    },
    {
