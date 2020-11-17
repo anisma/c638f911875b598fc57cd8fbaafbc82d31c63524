@@ -7,6 +7,7 @@ const activeStyles = css`
 
 const hiddenStyles = css`
    color: #6e7679;
+   cursor: not-allowed;
 `;
 
 const getDateWrapperStyles = (props) => {

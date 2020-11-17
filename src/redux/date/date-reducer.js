@@ -1,7 +1,8 @@
 import DateActionTypes from './date.types'
+const date =new Date
 
 const INITIAL_DATA = {
-   selectedDate: new Date(),
+   selectedDate: date.toString(),
 };
 
 const shopReducer = (state = INITIAL_DATA, action) => {
@@ -9,7 +10,7 @@ const shopReducer = (state = INITIAL_DATA, action) => {
       case DateActionTypes.SELECT_DATE:
          return {
             ...state,
-            selectedDate: action.payload
+            selectedDate: action.payload.toString()
          };
 
      

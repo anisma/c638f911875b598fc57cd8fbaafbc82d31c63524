@@ -77,3 +77,9 @@ export const getNext2Weeks = () => {
 
    return twoWeeks
 }
+
+
+export const getShortDateString = (string) => {
+   const date = new Date(string)
+   return date.toDateString();
+}
