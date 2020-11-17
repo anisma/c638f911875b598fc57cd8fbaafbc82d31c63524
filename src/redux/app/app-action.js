@@ -14,3 +14,8 @@ export const _changeMealTime = (time) => ({
    type: AppActionTypes.CHANGE_MEAL_TIME,
    payload: time
 })
+
+export const _addToCart = (item) => ({
+   type: AppActionTypes.ADD_TO_CART,
+   payload: item
+})
