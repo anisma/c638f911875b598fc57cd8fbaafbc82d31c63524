@@ -12,12 +12,6 @@ import {
 const OrderPage = () => {
    return (
       <OrderPageWrapper>
-         <ButtonWrapper>
-            <CustomButton headerButton active>
-               Lunch
-            </CustomButton>
-            <CustomButton headerButton>Dinner</CustomButton>
-         </ButtonWrapper>
          <ContentWrapper>
             <DateWrapper>Kamis, 14 November 2020</DateWrapper>
             <Card />

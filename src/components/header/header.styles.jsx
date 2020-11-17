@@ -34,3 +34,9 @@ export const SubText = styled.span`
    text-transform: uppercase;
    padding: 4px 0;
 `;
+
+export const ButtonWrapper = styled.div`
+   display: flex;
+   padding: 8px 16px;
+   background: #fff;
+`;

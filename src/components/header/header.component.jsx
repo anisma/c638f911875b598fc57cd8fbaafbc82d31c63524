@@ -8,8 +8,10 @@ import {
    LocationWrapper,
    Text,
    SubText,
+   ButtonWrapper,
 } from './header.styles';
 import DatePicker from '../date-picker/date-picker.component';
+import CustomButton from '../custom-button/custom-button.component';
 
 const Header = () => {
    return (
@@ -25,6 +27,12 @@ const Header = () => {
             </LocationWrapper>
          </HeaderWrapper>
          <DatePicker />
+         <ButtonWrapper>
+            <CustomButton headerButton active>
+               Lunch
+            </CustomButton>
+            <CustomButton headerButton>Dinner</CustomButton>
+         </ButtonWrapper>
       </HeaderContainer>
    );
 };

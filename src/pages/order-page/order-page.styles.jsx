@@ -7,12 +7,6 @@ export const OrderPageWrapper = styled.div`
    gap: 16px;
 `;
 
-export const ButtonWrapper = styled.div`
-   display: flex;
-   padding: 8px 16px;
-   background: #fff;
-`;
-
 export const ContentWrapper = styled.div`
    padding: 16px 16px;
    display: flex;
