@@ -1,7 +1,7 @@
 export const MEAL_DATA = [
    {
       id: 1,
-      rating: 4.3,
+      rating: 3.5,
       name: 'chicken fried noodle',
       resto: 'up town',
       price: 25000,
@@ -19,7 +19,7 @@ export const MEAL_DATA = [
    },
     {
       id: 3,
-      rating: 4.3,
+      rating: 4.5,
       name: 'special fried rice',
       resto: 'up town',
       price: 35000,
@@ -28,7 +28,7 @@ export const MEAL_DATA = [
    },
     {
       id: 4,
-      rating: 4.3,
+      rating: 4.0,
       name: 'paperoni pizza with cheese',
       resto: 'up town',
       price: 125000,
