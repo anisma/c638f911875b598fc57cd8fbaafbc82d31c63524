@@ -3,7 +3,8 @@ const date = new Date
 
 const INITIAL_DATA = {
    selectedDate: date.toString(),
-   datePickerPosition: 0
+   datePickerPosition: 0,
+   mealTime: 'lunch',
 };
 
 const appReducer = (state = INITIAL_DATA, action) => {
@@ -19,7 +20,11 @@ const appReducer = (state = INITIAL_DATA, action) => {
             ...state,
             datePickerPosition: action.payload
          }
-
+      case AppActionTypes.CHANGE_MEAL_TIME:
+         return {
+            ...state,
+            mealTime: action.payload
+         }
      
       default:
          return state;

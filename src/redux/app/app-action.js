@@ -9,3 +9,8 @@ export const _swipeDatePicker = (pos) => ({
    type: AppActionTypes.SWIPE_DATE_PICKER,
    payload: pos
 })
+
+export const _changeMealTime = (time) => ({
+   type: AppActionTypes.CHANGE_MEAL_TIME,
+   payload: time
+})
