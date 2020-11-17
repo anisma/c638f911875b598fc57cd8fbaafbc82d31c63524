@@ -12,7 +12,7 @@ import {
 } from './card.styles';
 
 const Card = ({ meal }) => {
-   const { rating, price, name, resto, image } = meal;
+   const { rating, price, name, resto, image, id } = meal;
 
    const numberWithCommas = (x) => {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');

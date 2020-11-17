@@ -11,6 +11,7 @@ const INITIAL_DATA = {
    mealTime: 'lunch',
    meals: MEAL_DATA,
    cart: [],
+   totalPrice: 0,
 };
 
 const appReducer = (state = INITIAL_DATA, action) => {
@@ -41,6 +42,12 @@ const appReducer = (state = INITIAL_DATA, action) => {
          return {
             ...state,
             cart: state.cart.push(state.meals.filter(meal => meal.id === action.payload))
+         }
+
+      case AppActionTypes.GET_TOTAL_PRICE:
+         return {
+            ...state,
+            totalPrice: state.cart && state.cart.reduce((accumulator, item) => accumulator + item.price, 0)
          }
      
       default:
