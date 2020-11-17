@@ -1,5 +1,3 @@
-const date = new Date();
-
 export const getDate= (date) => {
    return date.getDate();
 } 
