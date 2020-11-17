@@ -8,19 +8,16 @@ import {
    Title,
 } from './location-preview.styles';
 
-const LocationPreview = () => {
+const LocationPreview = ({ location }) => {
+   const { name, address } = location;
    return (
       <LocationPreviewWrapper>
          <IconWrapper>
             <LocationIcon fontSize='small' />
          </IconWrapper>
          <TextWrapper>
-            <Title>dfkadf</Title>
-            <Address>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-               Explicabo aperiam natus cupiditate fugit maiores sunt distinctio
-               vel doloribus molestias et!
-            </Address>
+            <Title>{name}</Title>
+            <Address>{address}</Address>
          </TextWrapper>
       </LocationPreviewWrapper>
    );

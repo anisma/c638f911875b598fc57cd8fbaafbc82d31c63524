@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import CloseRounded from '@material-ui/icons/CloseRounded';
 
 import {
@@ -13,6 +13,9 @@ import LocationPreview from '../location-preview/location-preview.component';
 import { _toggleHiddenLocationModal } from '../../redux/app/app-action';
 
 const LocationModal = () => {
+   //useSelector
+   const filteredLocation = useSelector((state) => state.app.filteredLocation);
+
    //useDispatch
    const dispatch = useDispatch();
    const toggleHiddenLocationModal = (input) =>
@@ -25,7 +28,11 @@ const LocationModal = () => {
             </CloseButtonWrapper>
             <Title>Cek makanan yang tersedia di lokasi kamu!</Title>
             <LocationInput />
-            <LocationPreview />
+            {filteredLocation
+               ? filteredLocation.map((item, idx) => (
+                    <LocationPreview key={idx} location={item} />
+                 ))
+               : null}
          </LocationModalWrapper>
       </LocationModalcontainer>
    );

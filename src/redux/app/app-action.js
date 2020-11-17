@@ -37,3 +37,8 @@ export const _selectLocation = (item) => ({
    type: AppActionTypes.SELECT_LOCATION,
    payload: item
 })
+
+export const _filterLocation = (item) => ({
+   type: AppActionTypes.FILTER_LOCATION,
+   payload: item
+})

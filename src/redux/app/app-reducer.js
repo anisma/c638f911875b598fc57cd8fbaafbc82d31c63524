@@ -14,7 +14,8 @@ const INITIAL_DATA = {
    totalCartItem: 0,
    hiddenLocationModal: true,
    locations:LOCATION_DATA,
-   selectedLocation: null
+   selectedLocation: null,
+   filteredLocation: null
 };
 
 const appReducer = (state = INITIAL_DATA, action) => {
@@ -64,6 +65,11 @@ const appReducer = (state = INITIAL_DATA, action) => {
          return {
             ...state,
             selectedLocation: action.payload,
+         }
+      case AppActionTypes.FILTER_LOCATION:
+         return{
+            ...state,
+            filteredLocation: action.payload === '' ? null : state.locations.filter((location)=> location.name.toLowerCase().includes(action.payload.toLocaleLowerCase()))
          }
      
       default:
