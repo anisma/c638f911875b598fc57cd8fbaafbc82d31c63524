@@ -3,6 +3,7 @@ const date = new Date
 
 const INITIAL_DATA = {
    selectedDate: date.toString(),
+   datePickerPosition: 0
 };
 
 const appReducer = (state = INITIAL_DATA, action) => {
@@ -12,6 +13,12 @@ const appReducer = (state = INITIAL_DATA, action) => {
             ...state,
             selectedDate: action.payload.toString()
          };
+
+      case AppActionTypes.SWIPE_DATE_PICKER:
+         return {
+            ...state,
+            datePickerPosition: action.payload
+         }
 
      
       default:
