@@ -10,7 +10,7 @@ const INITIAL_DATA = {
    datePickerPosition: 0,
    mealTime: 'lunch',
    meals: MEAL_DATA,
-   cart: null,
+   cart: [],
 };
 
 const appReducer = (state = INITIAL_DATA, action) => {
@@ -36,6 +36,11 @@ const appReducer = (state = INITIAL_DATA, action) => {
         return {
              ...state,
             meals: MEAL_DATA.filter((meal)=> meal.category.includes(action.payload))
+         }
+      case AppActionTypes.ADD_TO_CART:
+         return {
+            ...state,
+            cart: state.cart.push(state.meals.filter(meal => meal.id === action.payload))
          }
      
       default:
