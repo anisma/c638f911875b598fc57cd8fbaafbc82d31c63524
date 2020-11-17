@@ -12,7 +12,8 @@ const INITIAL_DATA = {
    meals: MEAL_DATA,
    cart: [],
    totalPrice: 0,
-   totalCartItem:0, 
+   totalCartItem: 0,
+   hiddenLocationModal: true,
 };
 
 const appReducer = (state = INITIAL_DATA, action) => {
@@ -50,7 +51,13 @@ const appReducer = (state = INITIAL_DATA, action) => {
             ...state,
             totalPrice: state.cart.map(item => item.price * item.quantity).reduce((accumulator, price) => accumulator + price, 0),
             totalCartItem: state.cart.map(item => item.quantity).reduce((accumulator, quantity) => accumulator + quantity, 0)
-      }
+         }
+      
+      case AppActionTypes.TOGGLE_HIDDEN_LOCATION_MODAL:
+         return {
+            ...state,
+            hiddenLocationModal: !state.hiddenLocationModal
+         }
      
       default:
          return state;

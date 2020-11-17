@@ -14,7 +14,11 @@ import {
 } from './header.styles';
 import DatePicker from '../date-picker/date-picker.component';
 import CustomButton from '../custom-button/custom-button.component';
-import { _changeMealTime, _filterMeals } from '../../redux/app/app-action';
+import {
+   _changeMealTime,
+   _filterMeals,
+   _toggleHiddenLocationModal,
+} from '../../redux/app/app-action';
 
 const Header = () => {
    //useSelector
@@ -24,6 +28,8 @@ const Header = () => {
    const dispatch = useDispatch();
    const changeMealTime = (input) => dispatch(_changeMealTime(input));
    const filterMeals = (input) => dispatch(_filterMeals(input));
+   const toggleHiddenLocationModal = (input) =>
+      dispatch(_toggleHiddenLocationModal);
 
    //useState
    const [hideButton, setHidenButton] = useState(false);
@@ -49,7 +55,7 @@ const Header = () => {
             <ArrowBack />
             <LocationWrapper>
                <SubText>alamat pengantar</SubText>
-               <Text>
+               <Text onClick={toggleHiddenLocationModal}>
                   Tokopedia tower
                   <ExpandMore fontSize='small' style={{ color: '#f9423a' }} />
                </Text>

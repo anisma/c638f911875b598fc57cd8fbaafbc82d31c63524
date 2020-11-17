@@ -28,3 +28,6 @@ export const _filterMeals = (item) => ({
 export const _getTotalPrice = {
    type: AppActionTypes.GET_TOTAL_PRICE,
 }
+export const _toggleHiddenLocationModal = {
+   type: AppActionTypes.TOGGLE_HIDDEN_LOCATION_MODAL,
+}
