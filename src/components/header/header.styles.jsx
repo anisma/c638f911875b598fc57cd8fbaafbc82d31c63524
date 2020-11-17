@@ -6,10 +6,10 @@ export const HeaderContainer = styled.div`
    position: fixed;
    background: #fff;
    top: 0;
+   width: 100vw;
 `;
 
 export const HeaderWrapper = styled.header`
-   width: 100%;
    display: flex;
    align-items: center;
 `;
