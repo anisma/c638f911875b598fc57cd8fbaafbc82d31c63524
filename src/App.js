@@ -9,7 +9,7 @@ function App() {
       <GlobalStyles/>
       <Header />
       <OrderPage />
-      <LocationModal/>
+      {/* <LocationModal/> */}
     </div>
   );
 }
