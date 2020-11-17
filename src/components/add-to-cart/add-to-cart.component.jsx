@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ShoppingCart from '@material-ui/icons/ShoppingCartOutlined';
 import ChevronRight from '@material-ui/icons/ChevronRight';
 import {
@@ -10,20 +10,24 @@ import {
    TextWrapper,
    WrapperRight,
 } from './add-to-cart.styles';
-import { _addToCart } from '../../redux/app/app-action';
 
 const AddToCart = () => {
    //useSelector
-   const cart = useSelector((state) => state.app.cart);
+   const totalCartItem = useSelector((state) => state.app.totalCartItem);
+   const totalPrice = useSelector((state) => state.app.totalPrice);
 
    //useDispatch
-   const dispatch = useDispatch();
-   const addToCart = (input) => dispatch(_addToCart(input));
+
+   const numberWithCommas = (x) => {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+   };
    return (
       <AddToCartContainer>
          <AddToCartWrapper>
             <Content>
-               <TextWrapper>{cart.lenght} items | Rp 125,000</TextWrapper>
+               <TextWrapper>
+                  {totalCartItem} items | Rp {numberWithCommas(totalPrice)}
+               </TextWrapper>
                <SubText>Termasuk Ongkos Kirim</SubText>
             </Content>
             <WrapperRight>

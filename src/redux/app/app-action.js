@@ -25,7 +25,6 @@ export const _filterMeals = (item) => ({
    payload: item
 })
 
-export const _getTotalPrice = (item) => ({
+export const _getTotalPrice = {
    type: AppActionTypes.GET_TOTAL_PRICE,
-   payload: item
-})
+}

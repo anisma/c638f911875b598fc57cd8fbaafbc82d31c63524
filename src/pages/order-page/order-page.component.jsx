@@ -15,6 +15,7 @@ const OrderPage = () => {
    //useSelector
    const meals = useSelector((state) => state.app.meals);
    const mealTime = useSelector((state) => state.app.mealTime);
+   const cart = useSelector((state) => state.app.cart);
 
    //useDispatch
    const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const OrderPage = () => {
                <Card key={meal.id} meal={meal} />
             ))}
          </ContentWrapper>
-         <AddToCart />
+         {cart.length > 0 && <AddToCart />}
       </OrderPageWrapper>
    );
 };
