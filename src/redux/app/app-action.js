@@ -19,3 +19,8 @@ export const _addToCart = (item) => ({
    type: AppActionTypes.ADD_TO_CART,
    payload: item
 })
+
+export const _filterMeals = (item) => ({
+   type: AppActionTypes.FILTER_MEALS,
+   payload: item
+})

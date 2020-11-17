@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import AddToCart from '../../components/add-to-cart/add-to-cart.component';
 import Card from '../../components/card/card.component';
+import { _filterMeals } from '../../redux/app/app-action';
 import { getTodaysDate } from '../../utils/date.utils';
 import {
    ContentWrapper,
@@ -14,6 +15,16 @@ const OrderPage = () => {
    //useSelector
    const meals = useSelector((state) => state.app.meals);
    const mealTime = useSelector((state) => state.app.mealTime);
+
+   //useDispatch
+   const dispatch = useDispatch();
+   const filterMeals = (input) => dispatch(_filterMeals(input));
+
+   //useEffect
+   useEffect(() => {
+      filterMeals(mealTime);
+   }, []);
+
    const todaysDate = getTodaysDate();
 
    return (

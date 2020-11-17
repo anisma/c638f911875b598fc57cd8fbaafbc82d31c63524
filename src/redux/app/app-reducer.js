@@ -9,7 +9,8 @@ const INITIAL_DATA = {
    selectedDate: date.toString(),
    datePickerPosition: 0,
    mealTime: 'lunch',
-   meals: MEAL_DATA.filter((meal)=> meal.category.includes('lunch'))
+   meals: MEAL_DATA,
+   cart: null,
 };
 
 const appReducer = (state = INITIAL_DATA, action) => {
@@ -29,6 +30,11 @@ const appReducer = (state = INITIAL_DATA, action) => {
          return {
             ...state,
             mealTime: action.payload,
+         }
+      
+      case AppActionTypes.FILTER_MEALS:
+        return {
+             ...state,
             meals: MEAL_DATA.filter((meal)=> meal.category.includes(action.payload))
          }
      

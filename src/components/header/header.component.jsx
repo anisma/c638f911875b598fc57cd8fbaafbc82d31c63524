@@ -14,7 +14,7 @@ import {
 } from './header.styles';
 import DatePicker from '../date-picker/date-picker.component';
 import CustomButton from '../custom-button/custom-button.component';
-import { _changeMealTime } from '../../redux/app/app-action';
+import { _changeMealTime, _filterMeals } from '../../redux/app/app-action';
 
 const Header = () => {
    //useSelector
@@ -23,6 +23,7 @@ const Header = () => {
    //useDispatch
    const dispatch = useDispatch();
    const changeMealTime = (input) => dispatch(_changeMealTime(input));
+   const filterMeals = (input) => dispatch(_filterMeals(input));
 
    //useState
    const [hideButton, setHidenButton] = useState(false);
@@ -60,14 +61,20 @@ const Header = () => {
                <CustomButton
                   headerButton
                   active={mealTime === 'lunch' ? true : false}
-                  onClick={() => changeMealTime('lunch')}
+                  onMouseDown={() => {
+                     changeMealTime('lunch');
+                  }}
+                  onClick={() => filterMeals(mealTime)}
                >
                   Lunch
                </CustomButton>
                <CustomButton
                   headerButton
                   active={mealTime === 'dinner' ? true : false}
-                  onClick={() => changeMealTime('dinner')}
+                  onMouseDown={() => {
+                     changeMealTime('dinner');
+                  }}
+                  onClick={() => filterMeals(mealTime)}
                >
                   Dinner
                </CustomButton>
