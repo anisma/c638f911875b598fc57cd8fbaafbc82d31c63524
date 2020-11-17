@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import AddToCart from '../../components/add-to-cart/add-to-cart.component';
 import Card from '../../components/card/card.component';
+import { getTodaysDate } from '../../utils/date.utils';
 import {
    ContentWrapper,
    DateWrapper,
@@ -8,14 +11,16 @@ import {
 } from './order-page.styles';
 
 const OrderPage = () => {
+   //useSelector
+   const meals = useSelector((state) => state.app.meals);
+
    return (
       <OrderPageWrapper>
          <ContentWrapper>
-            <DateWrapper>Kamis, 14 November 2020</DateWrapper>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <DateWrapper>{getTodaysDate}</DateWrapper>
+            {meals.map((meal) => (
+               <Card key={meal.id} meal={meal} />
+            ))}
          </ContentWrapper>
          <AddToCart />
       </OrderPageWrapper>

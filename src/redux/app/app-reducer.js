@@ -1,10 +1,12 @@
 import AppActionTypes from './app-types'
+import {MEAL_DATA} from './MEAL_DATA'
 const date = new Date
 
 const INITIAL_DATA = {
    selectedDate: date.toString(),
    datePickerPosition: 0,
    mealTime: 'lunch',
+   meals: MEAL_DATA
 };
 
 const appReducer = (state = INITIAL_DATA, action) => {

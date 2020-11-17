@@ -9,7 +9,7 @@ export const CardWrapper = styled.div`
 `;
 
 export const Image = styled.div`
-   background-image: url('https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
+   background-image: url(${(props) => props.image});
    background-position: center;
    background-size: cover;
    height: 300px;

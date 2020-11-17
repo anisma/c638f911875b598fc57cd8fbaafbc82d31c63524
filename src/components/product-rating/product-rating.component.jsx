@@ -2,7 +2,7 @@ import React from 'react';
 import StarBorder from '@material-ui/icons/StarBorderRounded';
 import { ProductRatingWrapper, RatingValue } from './product-rating.styles';
 
-const ProductRating = () => {
+const ProductRating = ({ rate }) => {
    const stars = [];
    for (let i = 0; i < 5; i++) {
       stars.push(
@@ -20,7 +20,7 @@ const ProductRating = () => {
 
    return (
       <ProductRatingWrapper>
-         <RatingValue>4.5</RatingValue>
+         <RatingValue>{parseFloat(rate).toFixed(1)}</RatingValue>
          {stars}
       </ProductRatingWrapper>
    );

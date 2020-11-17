@@ -11,16 +11,21 @@ import {
    Title,
 } from './card.styles';
 
-const Card = () => {
+const Card = ({ meal }) => {
+   const { rating, price, name, resto, image } = meal;
+
+   const numberWithCommas = (x) => {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+   };
    return (
       <CardWrapper>
-         <Image />
+         <Image image={image} />
          <CardBody>
-            <ProductRating />
-            <Title>Roasted Chicken with Scrambled egg</Title>
-            <Subtitle>by kulina &#8226; uptown</Subtitle>
+            <ProductRating rate={rating} />
+            <Title>{name}</Title>
+            <Subtitle>by kulina &#8226; {resto}</Subtitle>
             <BottomWrapper>
-               <Price>Rp 35,000</Price>
+               <Price>Rp {numberWithCommas(price)}</Price>
                <CustomButton addButton>add +</CustomButton>
             </BottomWrapper>
          </CardBody>
