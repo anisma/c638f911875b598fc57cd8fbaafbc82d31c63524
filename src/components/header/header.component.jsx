@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import ArrowBack from '@material-ui/icons/ArrowBack';
@@ -23,6 +23,25 @@ const Header = () => {
    //useDispatch
    const dispatch = useDispatch();
    const changeMealTime = (input) => dispatch(_changeMealTime(input));
+
+   //useState
+   const [hideButton, setHidenButton] = useState(false);
+
+   //useEffect
+   useEffect(() => {
+      const checkScrollPos = () => {
+         if (window.scrollY > 0) {
+            setHidenButton(true);
+         } else {
+            setHidenButton(false);
+         }
+      };
+      window.addEventListener('scroll', checkScrollPos);
+
+      return () => {
+         window.removeEventListener('scroll', checkScrollPos);
+      };
+   }, []);
    return (
       <HeaderContainer>
          <HeaderWrapper>
@@ -36,22 +55,24 @@ const Header = () => {
             </LocationWrapper>
          </HeaderWrapper>
          <DatePicker />
-         <ButtonWrapper>
-            <CustomButton
-               headerButton
-               active={mealTime === 'lunch' ? true : false}
-               onClick={() => changeMealTime('lunch')}
-            >
-               Lunch
-            </CustomButton>
-            <CustomButton
-               headerButton
-               active={mealTime === 'dinner' ? true : false}
-               onClick={() => changeMealTime('dinner')}
-            >
-               Dinner
-            </CustomButton>
-         </ButtonWrapper>
+         {!hideButton && (
+            <ButtonWrapper>
+               <CustomButton
+                  headerButton
+                  active={mealTime === 'lunch' ? true : false}
+                  onClick={() => changeMealTime('lunch')}
+               >
+                  Lunch
+               </CustomButton>
+               <CustomButton
+                  headerButton
+                  active={mealTime === 'dinner' ? true : false}
+                  onClick={() => changeMealTime('dinner')}
+               >
+                  Dinner
+               </CustomButton>
+            </ButtonWrapper>
+         )}
       </HeaderContainer>
    );
 };
