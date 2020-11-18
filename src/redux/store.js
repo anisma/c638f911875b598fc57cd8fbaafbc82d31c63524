@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 
 import rootReducer from './root-reducer';
 
-const middlewares = [thunk];
+export const middlewares = [thunk];
 
 //add logger into middleware
 if (process.env.NODE_ENV === 'development') {
