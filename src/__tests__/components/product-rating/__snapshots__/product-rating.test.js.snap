@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductRating Component should render with given state from Redux store 1`] = `
+<styled.div>
+  <styled.span>
+    NaN
+  </styled.span>
+  <StarBorderRoundedIcon
+    fontSize="small"
+    key="5"
+    style={
+      Object {
+        "color": "#f9423a",
+      }
+    }
+  />
+  <StarBorderRoundedIcon
+    fontSize="small"
+    key="4"
+    style={
+      Object {
+        "color": "#f9423a",
+      }
+    }
+  />
+  <StarBorderRoundedIcon
+    fontSize="small"
+    key="3"
+    style={
+      Object {
+        "color": "#f9423a",
+      }
+    }
+  />
+  <StarBorderRoundedIcon
+    fontSize="small"
+    key="2"
+    style={
+      Object {
+        "color": "#f9423a",
+      }
+    }
+  />
+  <StarBorderRoundedIcon
+    fontSize="small"
+    key="1"
+    style={
+      Object {
+        "color": "#f9423a",
+      }
+    }
+  />
+</styled.div>
+`;

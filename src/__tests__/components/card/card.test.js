@@ -16,7 +16,7 @@ const initialState = {
 
 const store = mockStore(initialState);
 
-describe('AddToCart Component', () => {
+describe('Card Component', () => {
 
     beforeEach(() => {
       // Runs before each test in the suite
@@ -33,6 +33,7 @@ describe('AddToCart Component', () => {
    });
 });
 
+
 describe('Add to cart action', () => {
    beforeEach(() => {
       // Runs before each test in the suite
@@ -44,10 +45,6 @@ describe('Add to cart action', () => {
          <Card />
       </Provider>
    );
-
-   it('', () => {
-      
-   })
 
    it('Dispatches the correct action and payload', () => {
       const item =  {
@@ -67,5 +64,16 @@ describe('Add to cart action', () => {
       ];
       store.dispatch(selectActions._addToCart(item));
       expect(store.getActions()).toEqual(expectedActions);
+
+      // const expectedActions2 = [
+      //    {
+      //       type: 'GET_TOTAL_PRICE',
+      // },
+      // ];
+      
+      // store.dispatch(selectActions._getTotalPrice());
+      // expect(store.getActions()).toEqual(expectedActions2);      
    });
+
+  
 });

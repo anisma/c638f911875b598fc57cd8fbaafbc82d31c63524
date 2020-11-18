@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Date Component renders correctly enzyme 1`] = `
+<styled.span>
+  <styled.span />
+  <styled.span />
+</styled.span>
+`;
